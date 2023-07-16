@@ -25,6 +25,7 @@ export const ProductCardContainer = styled.div`
     font-size: 14px;
     height: 88px;
     line-height: 1.2;
+    color: ${Colors.textCardKnowMore};
   }
 
   button {

@@ -27,13 +27,15 @@ export const ContainerCard = styled.div`
   border: solid 1px ${Colors.TagborderColor};
   width: 472px;
   height: 400px;
+
   @media (max-width: 500px) {
     width: 90%;
     margin: 0 auto;
   }
 
   p {
-    margin: 16px 0;
+    margin-top: 16px;
+    margin-bottom: 10px;
     padding: 0 8px;
     font-size: 14px;
     height: 88px;

@@ -7,6 +7,9 @@ import { Colors } from '../../main-styles'
 export const HeaderTitle = styled.h2`
   font-size: 36px;
   font-weight: 900;
+  max-width: 539px;
+  height: 84px;
+  margin: 0 auto;
 `
 export const LinkButton = styled(Link)`
   font-size: 18px;
@@ -46,7 +49,7 @@ export const HeaderContaner = styled.header<PropsHeader>`
   height: ${(props) => (props.typeheader === 'normal' ? '384px' : 'auto')};
 
   ${HeaderTitle} {
-    display: ${(props) => (props.typeheader === 'normal' ? 'initial' : 'none')};
+    display: ${(props) => (props.typeheader === 'normal' ? 'flex' : 'none')};
   }
 
   ${LinkButton} {
@@ -56,6 +59,7 @@ export const HeaderContaner = styled.header<PropsHeader>`
   .container {
     padding-top: 54px;
     text-align: center;
+
     nav {
       margin-bottom: ${(props) =>
         props.typeheader === 'normal' ? '130px' : '65px'};

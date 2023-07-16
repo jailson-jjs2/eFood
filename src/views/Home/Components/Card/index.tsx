@@ -16,6 +16,7 @@ export type PropsCard = {
   extra_content: string[]
   image: string
 }
+
 export default function Card({
   restaurant_name,
   description,

@@ -9,7 +9,8 @@ export const Colors = {
   TagborderColor: '#E66767',
   backgroundButton: '#E66767',
   ProductCardBackground: '#E66767',
-  backgroundButtonProduct: '#FFEBD9'
+  backgroundButtonProduct: '#FFEBD9',
+  textCardKnowMore: '#FFEBD9'
 }
 
 export const GlobalCss = createGlobalStyle`
