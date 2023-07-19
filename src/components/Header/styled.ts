@@ -21,6 +21,7 @@ export const HeaderBanner = styled.div<
   background-image: url(${(props) => props.image});
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   width: 100%;
   height: 280px;
   position: relative;
@@ -46,6 +47,7 @@ export const HeaderContaner = styled.header<PropsHeader>`
   background-image: url(${backgroundHEader});
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 56px;
   height: ${(props) => (props.typeheader === 'normal' ? '384px' : 'auto')};
 
   ${HeaderTitle} {

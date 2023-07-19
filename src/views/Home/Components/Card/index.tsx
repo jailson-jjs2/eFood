@@ -10,14 +10,16 @@ import {
 } from './styles'
 
 export type PropsCard = {
+  id: number
   restaurant_name: string
   description: string
-  score: string
+  score: number
   extra_content: string[]
   image: string
 }
 
 export default function Card({
+  id,
   restaurant_name,
   description,
   score,
@@ -40,7 +42,7 @@ export default function Card({
         </Score>
       </NameAndScore>
       <p>{description}</p>
-      <ButtonCard to="/KnowMore">Saiba mais</ButtonCard>
+      <ButtonCard to={`/KnowMore/${id}`}>Saiba mais</ButtonCard>
     </ContainerCard>
   )
 }

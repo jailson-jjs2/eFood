@@ -4,7 +4,10 @@ import { Colors } from '../../../../main-styles'
 import { Link } from 'react-router-dom'
 
 export const ImageCard = styled.div<
-  Omit<PropsCard, 'restaurant_name' | 'description' | 'score' | 'extra_content'>
+  Omit<
+    PropsCard,
+    'restaurant_name' | 'description' | 'score' | 'extra_content' | 'id'
+  >
 >`
   background-image: url(${(props) => props.image});
   background-repeat: no-repeat;

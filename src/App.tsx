@@ -12,7 +12,7 @@ const routes = createBrowserRouter([
     element: <HomePage />
   },
   {
-    path: '/KnowMore',
+    path: '/KnowMore/:id',
     element: <KnowMorePage />
   }
 ])

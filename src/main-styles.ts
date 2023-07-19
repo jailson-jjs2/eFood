@@ -10,7 +10,8 @@ export const Colors = {
   backgroundButton: '#E66767',
   ProductCardBackground: '#E66767',
   backgroundButtonProduct: '#FFEBD9',
-  textCardKnowMore: '#FFEBD9'
+  textCardKnowMore: '#FFEBD9',
+  modalBackgroundColor: '#E66767'
 }
 
 export const GlobalCss = createGlobalStyle`

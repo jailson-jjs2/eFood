@@ -2,7 +2,7 @@ import { HeaderBanner, HeaderContaner, HeaderTitle, LinkButton } from './styled'
 
 import logoEfood from '../../assets/Logo-Efood/logo-efood.svg'
 
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 export type PropsHeader = {
@@ -15,11 +15,12 @@ export type PropsHeader = {
 const Header = ({ nationality, image, restaurantname }: PropsHeader) => {
   const [typeHeader, setTypeHeader] = useState('normal')
   const location = useLocation()
+  const { id } = useParams()
 
   useEffect(() => {
-    if (location.pathname === '/KnowMore') {
+    if (location.pathname == `/KnowMore/${id}`) {
       setTypeHeader('customized')
-    } else if (location.pathname !== '/KnowMore') {
+    } else if (location.pathname == '') {
       setTypeHeader('normal')
     }
   }, [location])

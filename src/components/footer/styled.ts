@@ -7,6 +7,7 @@ export const FooterContainer = styled.footer`
   background-color: ${Colors.footerBackground};
   text-align: center;
   padding-top: 40px;
+  margin-top: 120px;
 
   nav {
     display: flex;
