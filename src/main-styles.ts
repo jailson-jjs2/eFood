@@ -11,7 +11,16 @@ export const Colors = {
   ProductCardBackground: '#E66767',
   backgroundButtonProduct: '#FFEBD9',
   textCardKnowMore: '#FFEBD9',
-  modalBackgroundColor: '#E66767'
+  modalBackgroundColor: '#E66767',
+  cartAsideBackgroundColor: '#E66767',
+  cartBackgroundColor: '#FFEBD9',
+  retaurantCardBackgroundColor: '#FFFFFF'
+}
+
+export const breakPoints = {
+  desktop: '1024px',
+  tablet: '768px',
+  mobile: '400px'
 }
 
 export const GlobalCss = createGlobalStyle`
@@ -33,5 +42,9 @@ export const GlobalCss = createGlobalStyle`
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
+
+    @media (max-width: ${breakPoints.desktop}){
+      max-width: 80vw;
+    }
   }
 `

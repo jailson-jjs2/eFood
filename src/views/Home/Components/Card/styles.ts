@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { PropsCard } from '.'
-import { Colors } from '../../../../main-styles'
+import { Colors, breakPoints } from '../../../../main-styles'
 import { Link } from 'react-router-dom'
 
 export const ImageCard = styled.div<
@@ -30,10 +30,14 @@ export const ContainerCard = styled.div`
   border: solid 1px ${Colors.TagborderColor};
   width: 472px;
   height: 400px;
+  background-color: ${Colors.retaurantCardBackgroundColor};
 
-  @media (max-width: 500px) {
-    width: 90%;
-    margin: 0 auto;
+  @media (max-width: ${breakPoints.desktop}) {
+    width: 100%;
+    height: 420px;
+  }
+  @media (max-width: ${breakPoints.tablet}) {
+    height: 450px;
   }
 
   p {
@@ -41,7 +45,7 @@ export const ContainerCard = styled.div`
     margin-bottom: 10px;
     padding: 0 8px;
     font-size: 14px;
-    height: 88px;
+    font-height: 1.5;
   }
 `
 export const NameAndScore = styled.div`
@@ -67,6 +71,7 @@ export const ButtonCard = styled(Link)`
   font-size: 14px;
   font-weight: bold;
   padding: 4px 6px;
-  margin-left: 8px;
-  margin-bottom: 8px;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
 `

@@ -5,6 +5,7 @@ import { GlobalCss } from './main-styles'
 import HomePage from './views/Home/page'
 import KnowMorePage from './views/KnowMore/page'
 import Footer from './components/footer'
+import Cart from './components/Cart'
 
 const routes = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ function App() {
       <GlobalCss />
       <RouterProvider router={routes} />
       <Footer />
+      <Cart />
     </>
   )
 }

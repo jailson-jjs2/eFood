@@ -1,5 +1,8 @@
-.stules{
+.stules:last-child{
 
-
-
+font-weight: bolder;
+text-align: left;
+background-color: transparent;
+position: absolute;
+justify-content: space-between;
 }

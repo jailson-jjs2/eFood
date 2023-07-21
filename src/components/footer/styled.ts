@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Colors } from '../../main-styles'
+import { Colors, breakPoints } from '../../main-styles'
 
 export const FooterContainer = styled.footer`
   width: 100%;
@@ -18,9 +18,14 @@ export const FooterContainer = styled.footer`
 
   p {
     font-size: 10px;
-    width: 480px;
+    max-width: 480px;
+    width: 100%;
     display: block;
     margin: 0 auto;
+    @media (max-width: ${breakPoints.tablet}) {
+      width: auto;
+      padding: 0 20px;
+    }
   }
 `
 export const LinkFooter = styled.a`
@@ -31,9 +36,4 @@ export const LinkFooter = styled.a`
   img {
     width: 100%;
   }
-`
-
-export const ParagraphFooter = styled.p`
-  color: ${Colors.textPrimary};
-  font-size: 10px;
 `

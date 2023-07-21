@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakPoints } from '../../../main-styles'
 
 export const MainKnowMore = styled.main`
   display: grid;
@@ -8,8 +9,11 @@ export const MainKnowMore = styled.main`
   margin-top: 56px;
   margin-bottom: 120px;
 
-  @media (max-width: 500px) {
+  @media (max-width: ${breakPoints.desktop}) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+  }
+  @media (max-width: ${breakPoints.tablet}) {
     grid-template-columns: 1fr;
-    column-gap: 0px;
   }
 `

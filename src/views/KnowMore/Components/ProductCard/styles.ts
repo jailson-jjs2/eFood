@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Colors } from '../../../../main-styles'
+import { Colors, breakPoints } from '../../../../main-styles'
 
 export const ProductCardContainer = styled.div`
   background-color: ${Colors.ProductCardBackground};
@@ -9,6 +9,14 @@ export const ProductCardContainer = styled.div`
   text-align: left;
   color: ${Colors.textSecondary};
   position: relative;
+
+  @media (max-width: ${breakPoints.desktop}) {
+    width: 100%;
+  }
+
+  @media (max-width: ${breakPoints.tablet}) {
+    height: 360px;
+  }
 
   img {
     width: 100%;
@@ -75,6 +83,14 @@ export const Card = styled.div`
   color: ${Colors.textSecondary};
   position: relative;
   z-index: 1;
+
+  @media (max-width: ${breakPoints.desktop}) {
+    width: 100%;
+  }
+  @media (max-width: ${breakPoints.tablet}) {
+    display: block;
+    height: 95%;
+  }
   div {
     margin-top: 32px;
   }
@@ -90,6 +106,15 @@ export const Paragraph = styled.p`
   height: 176px;
   margin-bottom: 16px;
   line-height: 1.7;
+
+  @media (max-width: ${breakPoints.desktop}) {
+    width: 100%;
+  }
+
+  @media (max-width: ${breakPoints.tablet}) {
+    height: auto;
+    line-height: 1.4;
+  }
 `
 export const ToAdd = styled.button`
   background-color: ${Colors.backgroundButtonProduct};
@@ -100,16 +125,49 @@ export const ToAdd = styled.button`
   font-weight: bold;
   font-size: 14px;
   border: none;
+
+  @media (max-width: ${breakPoints.tablet}) {
+    margin: 0 auto;
+    display: flex;
+  }
+
+  @media (max-width: ${breakPoints.mobile}) {
+    height: auto;
+  }
 `
 
 export const DivImage = styled.div`
-  width: 280px;
+  max-width: 280px;
+  width: 100%;
   height: 280px;
   margin: 32px;
-  background-color: black;
+
+  @media (max-width: ${breakPoints.desktop}) {
+    max-width: 40%;
+  }
+
+  @media (max-width: ${breakPoints.tablet}) {
+    max-width: calc(100% - 64px);
+    height: 280px;
+  }
+
+  @media (max-width: ${breakPoints.mobile}) {
+    height: calc(80vw - 64px);
+  }
   img {
     width: 100%;
     height: 100%;
+  }
+`
+export const DivContent = styled.div`
+  @media (max-width: ${breakPoints.desktop}) {
+    width: calc(64px - (40% - 100%));
+  }
+  @media (max-width: ${breakPoints.tablet}) {
+    margin: 0px !important;
+    width: 100%;
+    padding: 0 32px;
+    justify-content: center;
   }
 `
 

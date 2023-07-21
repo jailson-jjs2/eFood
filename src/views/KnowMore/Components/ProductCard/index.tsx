@@ -43,7 +43,7 @@ export default function ProductCard({
             <styles.DivImage>
               <img src={foto} alt={nome} />
             </styles.DivImage>
-            <div>
+            <styles.DivContent>
               <styles.Title>{nome}</styles.Title>
               <styles.Paragraph>
                 {descricao}
@@ -57,7 +57,7 @@ export default function ProductCard({
               <styles.Close title="fechar" type="button" onClick={seeModal}>
                 <img src={close} alt="Fechar" />
               </styles.Close>
-            </div>
+            </styles.DivContent>
           </styles.Card>
           <div className="overlay" onClick={seeModal}></div>
         </styles.Modal>

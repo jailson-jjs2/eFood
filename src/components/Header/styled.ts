@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import backgroundHEader from '../../assets/Logo-Efood/header-background.svg'
 import { PropsHeader } from '.'
 import { Link } from 'react-router-dom'
-import { Colors } from '../../main-styles'
+import { Colors, breakPoints } from '../../main-styles'
 
 export const HeaderTitle = styled.h2`
   font-size: 36px;
@@ -69,6 +69,9 @@ export const HeaderContaner = styled.header<PropsHeader>`
       align-items: center;
       justify-content: ${(props) =>
         props.typeheader === 'normal' ? 'center' : 'space-between'};
+      @media (max-width: ${breakPoints.tablet}) {
+        margin-bottom: 50px;
+      }
     }
   }
 

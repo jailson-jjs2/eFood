@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakPoints } from '../../../main-styles'
 
 export const HomeMain = styled.main`
   padding-top: 70px;
@@ -8,8 +9,13 @@ export const HomeMain = styled.main`
   column-gap: 80px;
   row-gap: 48px;
 
-  @media (max-width: 500px) {
+  @media (max-width: ${breakPoints.desktop}) {
+    column-gap: 24px;
+    row-gap: 24px;
+  }
+
+  @media (max-width: ${breakPoints.tablet}) {
     grid-template-columns: 1fr;
-    column-gap: 0px;
+    row-gap: 48px;
   }
 `
