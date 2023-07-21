@@ -6,6 +6,8 @@ import HomePage from './views/Home/page'
 import KnowMorePage from './views/KnowMore/page'
 import Footer from './components/footer'
 import Cart from './components/Cart'
+import { Provider } from 'react-redux'
+import { store } from './store'
 
 const routes = createBrowserRouter([
   {
@@ -21,10 +23,12 @@ const routes = createBrowserRouter([
 function App() {
   return (
     <>
-      <GlobalCss />
-      <RouterProvider router={routes} />
-      <Footer />
-      <Cart />
+      <Provider store={store}>
+        <GlobalCss />
+        <RouterProvider router={routes} />
+        <Footer />
+        <Cart />
+      </Provider>
     </>
   )
 }

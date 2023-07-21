@@ -5,4 +5,6 @@ text-align: left;
 background-color: transparent;
 position: absolute;
 justify-content: space-between;
+overflow: hidden;
+transition: ease-in;
 }

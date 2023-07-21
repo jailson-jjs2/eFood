@@ -1,16 +1,29 @@
 import styled from 'styled-components'
 import { Colors } from '../../main-styles'
 
+export const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: ${Colors.overlay};
+  opacity: 0.7;
+`
+
 export const Container = styled.div`
   max-width: 100vw;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.85);
   position: fixed;
   top: 0px;
   left: 0px;
   display: none;
   justify-content: end;
+
+  &.container--isactive {
+    display: flex;
+  }
 `
 export const Aside = styled.aside`
   max-width: 360px;
@@ -20,6 +33,8 @@ export const Aside = styled.aside`
   background-color: ${Colors.cartAsideBackgroundColor};
   padding-top: 32px;
   overflow: hidden;
+  position: absolute;
+  z-index: 1;
 
   &.aside--isActive {
     width: 100%;

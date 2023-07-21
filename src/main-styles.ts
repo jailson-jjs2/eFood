@@ -14,7 +14,8 @@ export const Colors = {
   modalBackgroundColor: '#E66767',
   cartAsideBackgroundColor: '#E66767',
   cartBackgroundColor: '#FFEBD9',
-  retaurantCardBackgroundColor: '#FFFFFF'
+  retaurantCardBackgroundColor: '#FFFFFF',
+  overlay: '#000'
 }
 
 export const breakPoints = {

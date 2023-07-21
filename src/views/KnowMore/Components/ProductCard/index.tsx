@@ -3,14 +3,12 @@ import { ProductCardContainer } from './styles'
 import * as styles from './styles'
 import Menu from '../../../../model/Menu/Menu'
 import close from '../../../../assets/icon/fechar.png'
-export default function ProductCard({
-  descricao,
-  foto,
-  nome,
-  porcao,
-  preco
-}: Menu) {
+import { useDispatch } from 'react-redux'
+import { add } from '../../../../store/reducers/Cart'
+export default function ProductCard(menu: Menu) {
+  const dispatch = useDispatch()
   const [modal, setModal] = useState(false)
+
   function seeModal() {
     if (modal) {
       setModal(false)
@@ -23,16 +21,20 @@ export default function ProductCard({
     if (description.length > 95) {
       return description.slice(0, 195) + '...'
     }
-
     return description
+  }
+
+  const addItem = () => {
+    dispatch(add(menu))
+    seeModal()
   }
 
   return (
     <>
       <ProductCardContainer>
-        <img src={foto} alt={nome} />
-        <h2>{nome}</h2>
-        <p>{getDescription(descricao)}</p>
+        <img src={menu.foto} alt={menu.nome} />
+        <h2>{menu.nome}</h2>
+        <p>{getDescription(menu.descricao)}</p>
         <button type="button" onClick={seeModal}>
           Adicionar ao carrinho
         </button>
@@ -41,18 +43,22 @@ export default function ProductCard({
         <styles.Modal className={modal ? '' : 'itIsNotVisible'}>
           <styles.Card className="container">
             <styles.DivImage>
-              <img src={foto} alt={nome} />
+              <img src={menu.foto} alt={menu.nome} />
             </styles.DivImage>
             <styles.DivContent>
-              <styles.Title>{nome}</styles.Title>
+              <styles.Title>{menu.nome}</styles.Title>
               <styles.Paragraph>
-                {descricao}
+                {menu.descricao}
                 <br />
                 <br />
-                <span>Serve: de {porcao}</span>
+                <span>Serve: de {menu.porcao}</span>
               </styles.Paragraph>
-              <styles.ToAdd title="Adicionar ao carrinho" type="button">
-                Adicionar ao carrinho - R$ {preco}
+              <styles.ToAdd
+                onClick={addItem}
+                title="Adicionar ao carrinho"
+                type="button"
+              >
+                Adicionar ao carrinho - R$ {menu.preco}
               </styles.ToAdd>
               <styles.Close title="fechar" type="button" onClick={seeModal}>
                 <img src={close} alt="Fechar" />

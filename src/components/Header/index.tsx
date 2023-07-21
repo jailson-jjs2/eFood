@@ -4,6 +4,10 @@ import logoEfood from '../../assets/Logo-Efood/logo-efood.svg'
 
 import { Link, useLocation, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { activeTheCart } from '../../store/reducers/Cart'
+import { RootReducer } from '../../store'
 
 export type PropsHeader = {
   typeheader?: string
@@ -16,6 +20,8 @@ const Header = ({ nationality, image, restaurantname }: PropsHeader) => {
   const [typeHeader, setTypeHeader] = useState('normal')
   const location = useLocation()
   const { id } = useParams()
+  const { items } = useSelector((state: RootReducer) => state.cart)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     if (location.pathname == `/KnowMore/${id}`) {
@@ -24,6 +30,10 @@ const Header = ({ nationality, image, restaurantname }: PropsHeader) => {
       setTypeHeader('normal')
     }
   }, [location])
+
+  function getActiveTheCart() {
+    dispatch(activeTheCart())
+  }
 
   return (
     <HeaderContaner typeheader={typeHeader}>
@@ -35,7 +45,9 @@ const Header = ({ nationality, image, restaurantname }: PropsHeader) => {
               <img src={logoEfood} alt="efood" />
             </h1>
           </Link>
-          <LinkButton to="/KnowMore">0 produto(s) no carrinho</LinkButton>
+          <LinkButton onClick={getActiveTheCart} to="">
+            {items.length} produto(s) no carrinho
+          </LinkButton>
         </nav>
         <HeaderTitle>
           Viva experiências gastronômicas no conforto da sua casa
