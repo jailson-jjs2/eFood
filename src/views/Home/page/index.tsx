@@ -1,17 +1,11 @@
-import { useEffect, useState } from 'react'
 import Header from '../../../components/Header'
 import Card from '../Components/Card'
-import Restaurant from '../../../model/Restaurant/Restaurant'
 import { HomeMain } from './styles'
+import { useGetAllRestaurantsQuery } from '../../../services/api'
 
 const HomePage = () => {
-  const [restaurant, setRestaurant] = useState<Restaurant[]>([])
+  const { data: restaurant } = useGetAllRestaurantsQuery()
 
-  useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
-      .then((res) => res.json())
-      .then((res) => setRestaurant(res))
-  }, [])
   function tagArray(primary: string, secondary: boolean): string[] {
     const array: string[] = []
     if (secondary === true) {
@@ -22,11 +16,12 @@ const HomePage = () => {
     array.push(primary)
     return array
   }
+
   return (
     <>
       <Header />
       <HomeMain className="container">
-        {restaurant.map((restaurant) => (
+        {restaurant?.map((restaurant) => (
           <Card
             key={restaurant.id}
             id={restaurant.id}

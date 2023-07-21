@@ -6,20 +6,18 @@ import Menu from '../../../model/Menu/Menu'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Restaurant from '../../../model/Restaurant/Restaurant'
+import { useGetRestaurantByIdQuery } from '../../../services/api'
 
 const KnowMorePage = () => {
   const { id } = useParams()
-  const [restaurant, setRestaurant] = useState<Restaurant>()
+
   const [menu, setMenu] = useState<Menu[]>([])
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => {
-        const { cardapio } = res
-        setMenu(cardapio)
-        setRestaurant(res)
-      })
-  })
+
+  const { data: restaurant } = useGetRestaurantByIdQuery(id!)
+
+  const cardapio = [restaurant?.cardapio]
+
+  setMenu(cardapio)
 
   return (
     <>
