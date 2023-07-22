@@ -1,23 +1,21 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import Header from '../../../components/Header'
 import ProductCard from '../Components/ProductCard'
-
 import { MainKnowMore } from './styles'
 import Menu from '../../../model/Menu/Menu'
-import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import Restaurant from '../../../model/Restaurant/Restaurant'
 import { useGetRestaurantByIdQuery } from '../../../services/api'
 
 const KnowMorePage = () => {
   const { id } = useParams()
 
-  const [menu, setMenu] = useState<Menu[]>([])
-
   const { data: restaurant } = useGetRestaurantByIdQuery(id!)
+  let menu: Menu[] = []
 
-  const cardapio = [restaurant?.cardapio]
-
-  setMenu(cardapio)
+  if (restaurant) {
+    const { cardapio } = restaurant
+    menu = cardapio
+  }
 
   return (
     <>
