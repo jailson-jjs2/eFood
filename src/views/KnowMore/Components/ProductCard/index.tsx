@@ -5,6 +5,7 @@ import Menu from '../../../../model/Menu/Menu'
 import close from '../../../../assets/icon/fechar.png'
 import { useDispatch } from 'react-redux'
 import { add } from '../../../../store/reducers/Cart'
+import { getDescription } from '../../../../utils/function'
 export default function ProductCard(menu: Menu) {
   const dispatch = useDispatch()
   const [modal, setModal] = useState(false)
@@ -17,13 +18,6 @@ export default function ProductCard(menu: Menu) {
     }
   }
 
-  const getDescription = (description: string) => {
-    if (description.length > 95) {
-      return description.slice(0, 195) + '...'
-    }
-    return description
-  }
-
   const addItem = () => {
     dispatch(add(menu))
     seeModal()
@@ -34,7 +28,7 @@ export default function ProductCard(menu: Menu) {
       <ProductCardContainer>
         <img src={menu.foto} alt={menu.nome} />
         <h2>{menu.nome}</h2>
-        <p>{getDescription(menu.descricao)}</p>
+        <p>{getDescription(menu.descricao, 192)}</p>
         <button type="button" onClick={seeModal}>
           Adicionar ao carrinho
         </button>
