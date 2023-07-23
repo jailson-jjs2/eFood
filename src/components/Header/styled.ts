@@ -19,6 +19,7 @@ export const LinkA = styled.a`
   font-size: 18px;
   color: ${Colors.textPrimary};
   display: flex;
+  cursor: pointer;
 `
 export const HeaderBanner = styled.div<
   Omit<PropsHeader, 'typeheader' | 'nationality' | 'restaurantname'>

@@ -4,7 +4,7 @@ import * as styles from './styles'
 import Menu from '../../../../model/Menu/Menu'
 import close from '../../../../assets/icon/fechar.png'
 import { useDispatch } from 'react-redux'
-import { add } from '../../../../store/reducers/Cart'
+import { add, activeTheCart } from '../../../../store/reducers/Cart'
 import { getDescription } from '../../../../utils/function'
 export default function ProductCard(menu: Menu) {
   const dispatch = useDispatch()
@@ -21,6 +21,7 @@ export default function ProductCard(menu: Menu) {
   const addItem = () => {
     dispatch(add(menu))
     seeModal()
+    dispatch(activeTheCart())
   }
 
   return (
