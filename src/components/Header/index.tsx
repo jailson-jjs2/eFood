@@ -1,4 +1,10 @@
-import { HeaderBanner, HeaderContaner, HeaderTitle, LinkButton } from './styled'
+import {
+  HeaderBanner,
+  HeaderContaner,
+  HeaderTitle,
+  LinkA,
+  LinkButton
+} from './styled'
 
 import logoEfood from '../../assets/Logo-Efood/logo-efood.svg'
 
@@ -45,9 +51,9 @@ const Header = ({ nationality, image, restaurantname }: PropsHeader) => {
               <img src={logoEfood} alt="efood" />
             </h1>
           </Link>
-          <LinkButton onClick={getActiveTheCart} to="">
+          <LinkA onClick={getActiveTheCart}>
             {items.length} produto(s) no carrinho
-          </LinkButton>
+          </LinkA>
         </nav>
         <HeaderTitle>
           Viva experiências gastronômicas no conforto da sua casa

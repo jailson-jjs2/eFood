@@ -15,6 +15,11 @@ export const LinkButton = styled(Link)`
   font-size: 18px;
   color: ${Colors.textPrimary};
 `
+export const LinkA = styled.a`
+  font-size: 18px;
+  color: ${Colors.textPrimary};
+  display: flex;
+`
 export const HeaderBanner = styled.div<
   Omit<PropsHeader, 'typeheader' | 'nationality' | 'restaurantname'>
 >`
@@ -54,7 +59,7 @@ export const HeaderContaner = styled.header<PropsHeader>`
     display: ${(props) => (props.typeheader === 'normal' ? 'flex' : 'none')};
   }
 
-  ${LinkButton} {
+  ${LinkButton} ,${LinkA} {
     display: ${(props) => (props.typeheader === 'normal' ? 'none' : 'initial')};
   }
 
