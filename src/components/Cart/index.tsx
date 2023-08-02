@@ -69,7 +69,7 @@ const Cart = () => {
                   type="button"
                   title="Deletar pedido"
                 >
-                  <img src={close} alt="Deletar pedido" />
+                  <img src={close} alt="Excluir pedido" />
                 </ButtonCard>
               </Order>
             </li>
